@@ -1,0 +1,100 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  max-width: 540px;
+}
+
+.content {
+  position: absolute;
+  bottom: 128px;
+  width: calc(100% - 330px);
+  justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.explore {
+  display: flex;
+}
+.subtitle {
+  letter-spacing: var(--letter-spacing-5);
+  text-transform: uppercase;
+  font-size: var(--text-preset-5);
+  color: var(--blue-300);
+  font-weight: normal;
+}
+.title {
+  font-family: var(--font-primary);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: var(--text-preset-1);
+  font-weight: normal;
+}
+.text {
+  font-family: var(--font-tertiary);
+  font-size: var(--text-preset-9);
+  line-height: var(--line-height-9);
+  color: var(--blue-300);
+}
+.exploreBtn {
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-preset-4);
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  width: clamp(144px, 30vw, 272px);
+  height: clamp(144px, 30vw, 272px);
+  border-radius: 50%;
+  color: var(--blue-900);
+}
+@media (max-width: 1170px) {
+  .content {
+    margin: 128px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    row-gap: 30px;
+    height: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    height: 100%;
+  }
+  .text {
+    font-family: var(--font-tertiary);
+    font-size: var(--text-preset-8);
+    line-height: var(--line-height-9);
+    letter-spacing: var(--letter-spacing-9);
+    color: var(--blue-300);
+  }
+}
+
+@media (max-width: 660px) {
+  .content {
+    margin: 0;
+    padding: 24px;
+  }
+}
+/* Для экранов 375px и меньше */
+@media (max-width: 500px) {
+  .content {
+    row-gap: 120px;
+  }
+}
