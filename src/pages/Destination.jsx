@@ -1,18 +1,19 @@
 import { useState } from "react";
 import data from "../data/data.json";
-
+import styles from "../assets/styles/Destination.module.css";
 const Destination = () => {
   const [activePlanet, setActivePlanet] = useState(data.destinations[0]);
 
   return (
-    <div className={styles.destination}>
+     
+    <section className={styles.destination}>
       {/* Левая сторона - изображение планеты */}
-      <div className={styles.imageContainer}>
+      <article className={styles.imageContainer}>
         <img src={activePlanet.images.png} alt={activePlanet.name} />
-      </div>
+      </article>
 
       {/* Правая сторона - контент */}
-      <div className={styles.content}>
+      <article className={styles.content}>
         {/* Список планет */}
         <ul className={styles.planetList}>
           {data.destinations.map((planet) => (
@@ -34,17 +35,17 @@ const Destination = () => {
 
         {/* Дистанция и время путешествия */}
         <div className={styles.infoContainer}>
-          <div>
-            <h2>Distance</h2>
-            <p>{activePlanet.distance}</p>
+          <div className={styles.infoWrapper}>
+            <p className={styles.infoTitle}>AVG. DISTANCE</p>
+            <p className={styles.infoData}>{activePlanet.distance}</p>
           </div>
-          <div>
-            <h2>Travel Time</h2>
-            <p>{activePlanet.travel}</p>
+          <div className={styles.infoWrapper}>
+            <p className={styles.infoTitle}>Est. travel time</p>
+            <p className={styles.infoData}>{activePlanet.travel}</p>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

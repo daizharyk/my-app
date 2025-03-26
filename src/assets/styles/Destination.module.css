@@ -1,0 +1,132 @@
+.destination {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  max-width: 1110px;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-vertical) var(--padding-horizontal);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 133px 47px;
+  width: 445px;
+
+  gap: 40px;
+}
+.imageContainer img {
+  width: 445px;
+  transition: 0.6s all;
+}
+.imageContainer img:hover {
+  scale: 1.1;
+}
+.imageContainer {
+  padding: 127px 30px;
+}
+.planetList {
+  display: flex;
+  gap: 32px;
+}
+.planetList li {
+  color: var(--blue-300);
+  cursor: pointer;
+  font-size: var(--text-preset-8);
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-7);
+  padding-bottom: 13px;
+  border-bottom: 3px solid transparent;
+  list-style: none;
+  transition: 0.2s all;
+}
+.planetList li:hover {
+  color: var(--white);
+  border-bottom: 3px solid var(--white);
+}
+.planetList li.click {
+  color: var(--white);
+}
+.title {
+  font-family: var(--font-primary);
+  font-size: var(--text-preset-10);
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.description {
+  font-family: var(--font-tertiary);
+  font-size: var(--text-preset-9);
+  line-height: 180%;
+  color: var(--blue-300);
+}
+.infoContainer {
+  text-transform: uppercase;
+  display: flex;
+
+  justify-content: space-between;
+  padding-top: 40px;
+  border-top: 1px solid var(--white);
+}
+.infoTitle {
+  font-size: 14px;
+  letter-spacing: var(--letter-spacing-8);
+  color: var(--blue-300);
+}
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.infoData {
+  font-family: var(--font-primary);
+  font-weight: normal;
+  font-size: 28px;
+}
+.planetList li.active {
+  border-bottom: 3px solid var(--white);
+  color: var(--white);
+}
+@media (max-width: 1160px) {
+  .destination {
+    row-gap: 24px;
+
+    padding: 0;
+    margin: 40px;
+    flex-direction: column;
+  }
+  .content {
+    width: 520px;
+    margin: 0;
+
+    text-align: center;
+  }
+  .imageContainer {
+    padding: 42px;
+  }
+  .imageContainer img {
+    width: 300px;
+  }
+  .planetList {
+    text-align: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 660px) {
+  .destination {
+   
+    margin: 24px;
+  }
+  .content {
+    width: 100%;
+    row-gap: 16px;
+  }
+  .imageContainer img {
+    width: 150px;
+  }
+  .infoContainer{
+    flex-direction: column;
+    padding-top: 16px;
+    row-gap: 24px;
+  }
+}

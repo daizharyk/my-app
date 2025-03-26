@@ -48,6 +48,7 @@
   --text-preset-7: clamp(12px, 2vw, 14px);
   --text-preset-8: clamp(14px, 2vw, 16px);
   --text-preset-9: clamp(15px, 2.5vw, 18px);
+  --text-preset-10: clamp(56px, 10.42vw, 96px);
 
   /* 📏 Высота строк */
   --line-height-1: 171.9%;
@@ -64,12 +65,16 @@
   --letter-spacing-7: 2px;
   --letter-spacing-8: 2px;
   --letter-spacing-9: 0px;
+
+  --padding-horizontal: clamp(24px, 8vw, 165px);
+  --padding-vertical: clamp(24px, 4vw, 48px);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 }
 
 html,
@@ -77,11 +82,11 @@ body {
   font-family: var(--font-secondary);
   color: var(--white);
   background-color: black;
-  overflow-x: hidden;
+
   width: 100%;
 }
 .page {
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,12 +113,21 @@ a {
 }
 
 main {
-  display: block;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 a {
   transition: 0.2s all;
 }
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
   .page.home {
     background-image: url("/assets/home/background-home-tablet.jpg");
