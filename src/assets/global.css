@@ -49,6 +49,8 @@
   --text-preset-8: clamp(14px, 2vw, 16px);
   --text-preset-9: clamp(15px, 2.5vw, 18px);
   --text-preset-10: clamp(56px, 10.42vw, 96px);
+  --text-preset-11: clamp(24px, 5.2vw, 56px);
+
 
   /* 📏 Высота строк */
   --line-height-1: 171.9%;
@@ -112,10 +114,25 @@ a {
   color: inherit;
 }
 
+.subtitle{
+  font-family: var(--font-secondary);
+  font-weight: normal;
+  color: var(--white);
+
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-5);
+  font-size: var(--text-preset-5);
+}
+.subtitle span {
+  opacity: 25%;
+  letter-spacing: var(--letter-spacing-5);
+  padding-right: 24px;
+}
 main {
   display: flex;
   justify-content: center;
-  width: 100vw;
+  overflow: hidden; 
+
 }
 a {
   transition: 0.2s all;

@@ -4,23 +4,41 @@ import styles from "../assets/styles/Destination.module.css";
 const Destination = () => {
   const [activePlanet, setActivePlanet] = useState(data.destinations[0]);
 
+  const [isAnimating, setIsAnimating] = useState(true);
+
+  const handlePlanetChange = (planet) => {
+    if (planet.name === activePlanet.name) return;
+
+    setIsAnimating(false);
+
+    setTimeout(() => {
+      setActivePlanet(planet);
+      setIsAnimating(true);
+    }, 300);
+  };
+
   return (
-     
     <section className={styles.destination}>
       {/* Левая сторона - изображение планеты */}
       <article className={styles.imageContainer}>
-        <img src={activePlanet.images.png} alt={activePlanet.name} />
+        <img
+          src={activePlanet.images.png}
+          className={isAnimating ? styles.active : ""}
+          alt={activePlanet.name}
+        />
       </article>
 
       {/* Правая сторона - контент */}
-      <article className={styles.content}>
+      <article
+        className={`${styles.content} ${isAnimating ? styles.active : ""}`}
+      >
         {/* Список планет */}
         <ul className={styles.planetList}>
           {data.destinations.map((planet) => (
             <li
               key={planet.name}
               className={activePlanet.name === planet.name ? styles.active : ""}
-              onClick={() => setActivePlanet(planet)}
+              onClick={() => handlePlanetChange(planet)}
             >
               {planet.name}
             </li>

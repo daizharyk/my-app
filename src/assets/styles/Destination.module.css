@@ -3,9 +3,10 @@
   gap: 32px;
   width: 100%;
   max-width: 1110px;
+  height: 790px;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-vertical) var(--padding-horizontal);
+  margin: var(--padding-vertical) var(--padding-horizontal);
 }
 .content {
   display: flex;
@@ -45,6 +46,20 @@
   color: var(--white);
   border-bottom: 3px solid var(--white);
 }
+
+.content > *:not(.planetList),
+.imageContainer img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.content.active > *:not(.planetList),
+.imageContainer img.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .planetList li.click {
   color: var(--white);
 }
@@ -90,10 +105,9 @@
 @media (max-width: 1160px) {
   .destination {
     row-gap: 24px;
-
-    padding: 0;
-    margin: 40px;
+    height: 800px;
     flex-direction: column;
+    height: 100%;
   }
   .content {
     width: 520px;
@@ -114,7 +128,6 @@
 }
 @media (max-width: 660px) {
   .destination {
-   
     margin: 24px;
   }
   .content {
@@ -124,7 +137,7 @@
   .imageContainer img {
     width: 150px;
   }
-  .infoContainer{
+  .infoContainer {
     flex-direction: column;
     padding-top: 16px;
     row-gap: 24px;

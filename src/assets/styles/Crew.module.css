@@ -1,0 +1,160 @@
+.crew {
+  display: flex;
+  flex-direction: column;
+  margin: 48px;
+  max-width: 1110px;
+  height: 790px;
+  justify-content: space-between;
+}
+.crewContainer {
+  display: flex;
+  align-items: center;
+  height: 790px;
+  gap: 32px;
+}
+.name {
+  font-family: var(--font-primary);
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: var(--text-preset-11);
+  color: var(--white);
+  padding-top: 16px;
+}
+
+.role {
+  font-family: var(--font-primary);
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: var(--text-preset-4);
+  color: rgba(var(--white-rgb), 0.5);
+}
+.description {
+  font-family: var(--font-tertiary);
+  font-weight: normal;
+  line-height: var(--line-height-9);
+  font-size: var(--text-preset-9);
+  padding-top: 24px;
+  color: var(--blue-300);
+}
+.crewInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центрируем содержимое */
+  height: 100%;
+}
+.crewList {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  gap: 40px;
+}
+.crewList li {
+  width: 15px;
+  height: 15px;
+  background-color: var(--white);
+  opacity: 18%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.crewImage img {
+  width: 500px;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.crewInfo > *:not(.crewList),
+.crewImage img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.crewInfo.active > *:not(.crewList),
+.crewImage img.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.crewInfo.hidden,
+.crewImage img.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.crewList li:hover {
+  background-color: var(--white);
+  opacity: 1;
+}
+
+.crewList .active {
+  background-color: var(--white);
+  opacity: 1;
+}
+
+@media (max-width: 1050px) {
+  .crewContainer {
+    flex-direction: column;
+  }
+  .crew {
+    height: 850px;
+  }
+  .active {
+    height: 550px;
+  }
+  .crewInfo {
+    min-height: 300px;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+
+    position: relative;
+  }
+  .crewImage img{
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+  }
+  .crewList {
+    position: absolute;
+    padding-top: 50px;
+    justify-content: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .subtitle {
+    width: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+}
+
+@media (max-width: 480px) {
+    .crew{
+       align-items: center;
+       margin: 24px;
+    }
+    .crewInfo{
+        height: 300px;
+    }
+    .crewImage img {
+      max-width: 250px;
+    }
+  }
