@@ -10,6 +10,7 @@ import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 import "./assets/global.css";
+import data from "./data/data.json";
 
 const AppContent = () => {
   const location = useLocation();
@@ -22,9 +23,9 @@ const AppContent = () => {
       <main id={pageClass === "technology" ? "technology" : ""}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/destination" element={<Destination />} />
-          <Route path="/crew" element={<Crew />} />
-          <Route path="/technology" element={<Technology />} />
+          <Route path="/destination" element={<Destination data={data} />} />
+          <Route path="/crew" element={<Crew data={data} />} />
+          <Route path="/technology" element={<Technology data={data} />} />
         </Routes>
       </main>
     </div>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "../assets/styles/Crew.module.css";
-import data from "../data/data.json";
 
-const Crew = () => {
+
+const Crew = ({ data }) => {
   const [activeCrew, setActiveCrew] = useState(data.crew[0]);
 
   const [isAnimating, setIsAnimating] = useState(false);

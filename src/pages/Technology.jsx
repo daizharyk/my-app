@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "../assets/styles/Technology.module.css";
-import data from "../data/data.json";
 
-const Technology = () => {
+
+const Technology = ({ data }) => {
   const [activeTechnology, setActiveTechnology] = useState(data.technology[0]);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1200);
   const [isAnimating, setIsAnimating] = useState(false);
