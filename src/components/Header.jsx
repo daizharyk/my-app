@@ -25,6 +25,11 @@ const Header = () => {
       }
     };
 
+    useEffect(() => {
+      setMenuOpen(false);
+    }, [location.pathname]);
+
+    
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
