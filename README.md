@@ -16,8 +16,6 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -30,7 +28,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./img.png)
+![](./img2.png)
+![](./img3.png)
+![](./img4.png)
+![](./img5.png)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -38,12 +40,10 @@ Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to t
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [](https://github.com/daizharyk/my-app)
+- Live Site URL: [](https://space-tourism-didar.netlify.app/)
 
 ## My process
 
@@ -55,60 +55,60 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Vite](https://vitejs.dev/) - Build tool
+- CSS Modules - For styles
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+While working on this project, I:
 
-To see how you can add code snippets, see below:
+✅ Learned how to write styles using CSS Modules, which helps avoid class conflicts and keeps the code more organized.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+Example of using a CSS Module:
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+/_ styles/Button.module.css _/
+.button {
+background-color: blue;
+color: white;
+padding: 10px 20px;
+border-radius: 5px;
 }
-```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+// components/Button.js
+import styles from "../styles/Button.module.css";
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+export default function Button() {
+return <button className={styles.button}>Click me</button>;
+}
+✅ Strengthened my knowledge of React hooks:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+useState – for managing state.
+
+useEffect – for handling side effects (e.g., detecting clicks outside an element).
+
+This project helped me better understand modular styling and React hooks, making my code cleaner and more efficient. 🚀
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In the future, I want to continue working with styling in React, exploring different approaches such as:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Styled Components for component-based styling.
+
+Tailwind CSS for utility-first styling.
+
+Global styles with CSS-in-JS solutions.
+
+Additionally, for my next project, I plan to start learning Next.js to improve my skills in server-side rendering (SSR) and static site generation (SSG). 🚀
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Didar Aizharyk](https://www.instagram.com/d.aizharyk/?__pwa=1)
+- Frontend Mentor - [@daizharyk](https://www.frontendmentor.io/profile/daizharyk)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+thank you Ghat GPT .
