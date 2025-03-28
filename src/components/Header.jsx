@@ -9,6 +9,13 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+
+  useEffect(() => {
+    if (menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [location.pathname]);
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuOpen) {
@@ -25,9 +32,7 @@ const Header = () => {
       }
     };
 
-    // useEffect(() => {
-    //   setMenuOpen(false);
-    // }, [location.pathname]);
+ 
 
     
     document.addEventListener("click", handleClickOutside);
