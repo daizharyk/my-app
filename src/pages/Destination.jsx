@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "../data/data.json";
 import styles from "../assets/styles/Destination.module.css";
 const Destination = () => {
   const [activePlanet, setActivePlanet] = useState(data.destinations[0]);
 
-  const [isAnimating, setIsAnimating] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+
+    useEffect(() => {
+      setTimeout(() => {
+        setIsAnimating(true);
+      }, 100);
+    }, []);
 
   const handlePlanetChange = (planet) => {
     if (planet.name === activePlanet.name) return;

@@ -19,7 +19,7 @@ const AppContent = () => {
   return (
     <div className={`page ${pageClass}`}>
       <Header />
-      <main>
+      <main id={pageClass === "technology" ? "technology" : ""}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/destination" element={<Destination />} />

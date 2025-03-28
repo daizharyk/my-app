@@ -134,12 +134,19 @@ main {
   overflow: hidden; 
 
 }
+main#technology {
+  justify-content: flex-end;
+}
 a {
   transition: 0.2s all;
 }
 
 
-
+@media (max-width: 1200px){
+  main#technology {
+    justify-content: center;
+  }
+}
 
 
 
@@ -162,6 +169,10 @@ a {
 
 /* 📱 Мобильные устройства (до 767px) */
 @media (max-width: 550px) {
+  .subtitle{
+
+    text-align: center;
+  }
   .page.home {
     background-image: url("/assets/home/background-home-mobile.jpg");
   }

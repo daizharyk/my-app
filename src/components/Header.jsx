@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "../assets/styles/Header.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,6 +8,28 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen) {
+        const nav = document.querySelector(`.${styles.nav}`);
+        const burger = document.querySelector(`.${styles.burger}`);
+
+        if (
+          nav &&
+          !nav.contains(event.target) &&
+          !burger.contains(event.target)
+        ) {
+          setMenuOpen(false);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <header className={styles.header}>

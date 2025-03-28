@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../assets/styles/Crew.module.css";
 import data from "../data/data.json";
 
 const Crew = () => {
   const [activeCrew, setActiveCrew] = useState(data.crew[0]);
 
-  const [isAnimating, setIsAnimating] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+
+    useEffect(() => {
+      setTimeout(() => {
+        setIsAnimating(true);
+      }, 100);
+    }, []);
 
   const handleCrewChange = (crew) => {
     if (crew.name === activeCrew.name) return;

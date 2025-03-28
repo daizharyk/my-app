@@ -1,12 +1,12 @@
-.crew {
+.technology {
   display: flex;
   flex-direction: column;
-  margin: 48px;
-  max-width: 1110px;
+  margin: 48px 0 48px 0;
+  max-width: 90%;
   height: 790px;
   justify-content: space-between;
 }
-.crewContainer {
+.technologyContainer {
   display: flex;
   align-items: center;
   height: 790px;
@@ -36,98 +36,109 @@
   padding-top: 24px;
   color: var(--blue-300);
 }
-.crewInfo {
+.technologyInfo {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Центрируем содержимое */
-  height: 100%;
+
+  height: 300px;
 }
-.crewList {
+.technologyList {
   display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+  flex-direction: column;
+  row-gap: 32px;
   list-style: none;
   padding: 0;
-  gap: 40px;
 }
-.crewList li {
-  width: 15px;
-  height: 15px;
-  background-color: var(--white);
-  opacity: 18%;
+.technologyList li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  color: var(--white);
+  border: 1px solid var(--white);
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s ease all;
+  font-family: var(--font-primary);
+  font-size: var(--text-preset-4);
 }
 
-.crewImage img {
+.technologyImage img {
   width: 500px;
- 
 }
 
-.crewInfo > *:not(.crewList),
-.crewImage img {
+.technologyInfo > *:not(.crewList),
+.technologyImage img {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.crewInfo.active > *:not(.crewList),
-.crewImage img.active {
+.technologyInfo.active > *:not(.crewList),
+.technologyImage img.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-.crewInfo.hidden,
-.crewImage img.hidden {
+.technologyInfo.hidden,
+.technologyImage img.hidden {
   opacity: 0;
   transform: translateY(20px);
 }
 
-.crewList li:hover {
+.technologyList li:hover {
   background-color: var(--white);
+  color: black;
   opacity: 1;
 }
 
-.crewList .active {
+.technologyList .active {
   background-color: var(--white);
   opacity: 1;
+  color: black;
 }
 
-@media (max-width: 1050px) {
-  .crewContainer {
+@media (max-width: 1200px) {
+  .technologyContainer {
+    height: auto;
+    row-gap: 0;
     flex-direction: column;
   }
-  .crew {
-    height: 850px;
+  .description {
+    padding-top: 16px;
   }
-  .active {
-    height: 550px;
+  .technology {
+    height: auto;
+    width: 100%;
+    margin: 40px;
   }
-  .crewInfo {
-    min-height: 300px;
+
+  .technologyInfo {
+    width: 510px;
+    height: auto;
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-
+    order: 3;
     position: relative;
   }
-  .crewImage img {
-    width: 400px;
+  .technologyImage {
+    padding-top: 64px;
+    order: 1;
+  }
+  .technologyImage img {
+    width: 100vw;
     height: auto;
     object-fit: cover;
   }
-  .crewList {
-    position: absolute;
-    padding-top: 50px;
-    justify-content: center;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+
+  .technologyList {
+    padding: 32px 0 40px 0;
+    order: 2;
+    flex-direction: row;
+    gap: 16px;
   }
   .subtitle {
     width: 100%;
@@ -137,15 +148,18 @@
   }
 }
 
-@media (max-width: 480px) {
-  .crew {
-    align-items: center;
-    margin: 24px;
+@media (max-width: 550px) {
+  .technologyList li {
+    width: 40px;
+    height: 40px;
   }
-  .crewInfo {
-    height: 300px;
+  .technology {
+    margin: 24px 24px 48px 24px;
   }
-  .crewImage img {
-    max-width: 250px;
+  .technologyImage img {
+    height: 258px;
+  }
+  .technologyInfo {
+    width: 100%;
   }
 }

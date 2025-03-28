@@ -130,11 +130,11 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    right: -70%;
+    right: -80%;
     backdrop-filter: blur(20px);
     display: flex;
     padding: 20px 0;
-    transition: right 0.2s ease-in-out;
+    transition:  0.2s  all;
   }
   .nav.open {
     right: 0;
