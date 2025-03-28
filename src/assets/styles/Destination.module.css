@@ -144,7 +144,7 @@
   }
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .imageContainer img.active:hover {
     scale: 1.1;
   }
