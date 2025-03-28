@@ -16,6 +16,8 @@
 }
 .explore {
   display: flex;
+
+  align-items: center;
 }
 .subtitle {
   letter-spacing: var(--letter-spacing-5);
