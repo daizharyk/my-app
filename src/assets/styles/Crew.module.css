@@ -131,6 +131,7 @@
     object-fit: cover;
   }
   .crewList {
+    
     position: absolute;
     padding-top: 50px;
     justify-content: center;
